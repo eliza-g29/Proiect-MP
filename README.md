@@ -1,2 +1,4 @@
 # Proiect-MP
 Sistem de gestionare al unui spital
+
+Link diagrama canvas: https://miro.com/welcomeonboard/aXZiWStrRjVva2dMUDJzc2U2SDJ3bTB1aXpOY2VRNXp1NkdHTVFjMnRSSE1qdFRJdjNyMWFXVnFLaVdvZ0o2cnZ1UEJhWElXdndXM0pFKy9hdU0rODR3MDdRTW1GZU1xektkUjdPQ0VvSFVOZGVYQjM0YURZUUc5djVPR3FiUEJhWWluRVAxeXRuUUgwWDl3Mk1qRGVRPT0hdjE=?share_link_id=715830984587
