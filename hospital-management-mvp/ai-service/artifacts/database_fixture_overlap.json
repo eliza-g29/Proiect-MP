@@ -1,0 +1,10 @@
+{
+  "fixture_cases": 1080,
+  "overlap": {
+    "train": 1080,
+    "validation": 0,
+    "test": 0
+  },
+  "used_as_features": false,
+  "warning": "Populated database fixture cases are training examples, not an independent evaluation set."
+}

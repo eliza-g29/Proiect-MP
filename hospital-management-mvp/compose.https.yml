@@ -1,0 +1,10 @@
+services:
+  frontend:
+    ports:
+      - "127.0.0.1:3443:443"
+    volumes:
+      - ./frontend/nginx/https.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./ops/tls:/etc/nginx/tls:ro
+  backend:
+    environment:
+      CORS_ORIGIN: https://localhost:3443

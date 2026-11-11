@@ -1,0 +1,13 @@
+text,label
+"vizita preventiva pentru discutarea stilului de viata",GENERAL_REVIEW
+"revenire la cabinet pentru control obisnuit",GENERAL_REVIEW
+"discutie de rutina despre documentele medicale",GENERAL_REVIEW
+"control periodic fara modificari relatate",GENERAL_REVIEW
+"tuse persistenta de mai multe saptamani",EXTENDED_REVIEW
+"febra repetata cu dureri musculare",EXTENDED_REVIEW
+"dureri abdominale repetate insotite de greata",EXTENDED_REVIEW
+"palpitatii si ameteli relatate la consultatie",EXTENDED_REVIEW
+"pacient fictiv relateaza pierdere brusca de vedere",ATTENTION_FLAG
+"respiratie sever ingreunata cu durere toracica",ATTENTION_FLAG
+"debut brusc de slabiciune si vorbire dificila",ATTENTION_FLAG
+"sangerare intensa si pierderea constientei",ATTENTION_FLAG

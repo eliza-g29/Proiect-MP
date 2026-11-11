@@ -1,0 +1,27 @@
+node_modules/
+dist/
+target/
+.venv/
+__pycache__/
+.pytest_cache/
+.env
+.DS_Store
+*.pyc
+
+ops/tls/
+backups/
+data/
+*.agekey
+
+.cache/
+
+# Only the explicitly supplied synthetic ML dataset is versioned. Runtime medical data stay ignored.
+!ai-service/data/
+ai-service/data/*
+!ai-service/data/medflow_3000/
+!ai-service/data/medflow_3000/*.csv
+!ai-service/data/medflow_3000/*.json
+
+# Generated academic medication routing scenarios (no patient data).
+!ai-service/data/medication_v1/
+!ai-service/data/medication_v1/*.jsonl

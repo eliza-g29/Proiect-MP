@@ -1,0 +1,144 @@
+{
+  "records": 3000,
+  "splits": {
+    "train": {
+      "examples": 2250,
+      "triage": {
+        "EXTENDED_REVIEW": 900,
+        "ATTENTION_FLAG": 675,
+        "GENERAL_REVIEW": 675
+      },
+      "syndromes": {
+        "D01": 75,
+        "D02": 75,
+        "D03": 75,
+        "D04": 75,
+        "D05": 75,
+        "D06": 75,
+        "D07": 75,
+        "D08": 75,
+        "D09": 75,
+        "D10": 75,
+        "D11": 75,
+        "D12": 75,
+        "D13": 75,
+        "D14": 75,
+        "D15": 75,
+        "D16": 75,
+        "D17": 75,
+        "D18": 75,
+        "D19": 75,
+        "D20": 75,
+        "D21": 75,
+        "D22": 75,
+        "D23": 75,
+        "D24": 75,
+        "D25": 75,
+        "D26": 75,
+        "D27": 75,
+        "D28": 75,
+        "D29": 75,
+        "D30": 75
+      }
+    },
+    "validation": {
+      "examples": 375,
+      "triage": {
+        "GENERAL_REVIEW": 113,
+        "ATTENTION_FLAG": 112,
+        "EXTENDED_REVIEW": 150
+      },
+      "syndromes": {
+        "D01": 13,
+        "D02": 12,
+        "D03": 13,
+        "D04": 12,
+        "D05": 13,
+        "D06": 12,
+        "D07": 13,
+        "D08": 12,
+        "D09": 13,
+        "D10": 12,
+        "D11": 13,
+        "D12": 12,
+        "D13": 13,
+        "D14": 12,
+        "D15": 13,
+        "D16": 12,
+        "D17": 13,
+        "D18": 12,
+        "D19": 13,
+        "D20": 12,
+        "D21": 13,
+        "D22": 12,
+        "D23": 13,
+        "D24": 12,
+        "D25": 13,
+        "D26": 12,
+        "D27": 13,
+        "D28": 12,
+        "D29": 13,
+        "D30": 12
+      }
+    },
+    "test": {
+      "examples": 375,
+      "triage": {
+        "ATTENTION_FLAG": 113,
+        "EXTENDED_REVIEW": 150,
+        "GENERAL_REVIEW": 112
+      },
+      "syndromes": {
+        "D01": 12,
+        "D02": 13,
+        "D03": 12,
+        "D04": 13,
+        "D05": 12,
+        "D06": 13,
+        "D07": 12,
+        "D08": 13,
+        "D09": 12,
+        "D10": 13,
+        "D11": 12,
+        "D12": 13,
+        "D13": 12,
+        "D14": 13,
+        "D15": 12,
+        "D16": 13,
+        "D17": 12,
+        "D18": 13,
+        "D19": 12,
+        "D20": 13,
+        "D21": 12,
+        "D22": 13,
+        "D23": 12,
+        "D24": 13,
+        "D25": 12,
+        "D26": 13,
+        "D27": 12,
+        "D28": 13,
+        "D29": 12,
+        "D30": 13
+      }
+    }
+  },
+  "sha256": {
+    "train": "4aeaf8b64f5c61e30a63d8131c12fb54dc53cdb70af5e4defa1e5fdcd0ebf30f",
+    "validation": "6fc121cf4e574af3ecbd09ae44afc78fa67027c36ef9dc5bb4d67629caf9b045",
+    "test": "0678ed6a8ec478d0fc4f20a1dcc00a19b39a1bb0ecd89a35569f0dfdf48732bf"
+  },
+  "features": [
+    "clinical_input_text"
+  ],
+  "excluded_features": [
+    "case_id",
+    "split",
+    "synthetic_patient_id",
+    "synthetic_encounter_id",
+    "synthetic_hospital_id",
+    "label_source",
+    "all target_* fields"
+  ],
+  "clinical_validation": false,
+  "limitation": "All splits use the same 30 synthetic templates, not independent clinical sources."
+}
