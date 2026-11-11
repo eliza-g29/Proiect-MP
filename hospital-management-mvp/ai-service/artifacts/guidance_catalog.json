@@ -1,0 +1,578 @@
+{
+  "format": "medflow-guidance-v1",
+  "source": "MedFlow 3000 TRAIN targets",
+  "train_sha256": "4aeaf8b64f5c61e30a63d8131c12fb54dc53cdb70af5e4defa1e5fdcd0ebf30f",
+  "demo_only": true,
+  "clinical_validation": false,
+  "profiles": {
+    "D20": {
+      "label": "Durere abdominală persistentă nespecifică",
+      "category": "EXTENDED_REVIEW",
+      "differentials": [
+        "dispepsie",
+        "cauze intestinale",
+        "cauze urinare"
+      ],
+      "managementOptions": [
+        "consult medical cu examen abdominal",
+        "tratament numai după clarificarea cauzei",
+        "reevaluare dacă apar semne de alarmă"
+      ],
+      "investigations": [
+        "examen abdominal",
+        "analize/imaging numai la indicația medicului"
+      ],
+      "referral": "evaluare clinică extinsă",
+      "explanation": "Durerea persistentă are multiple cauze și necesită apreciere medicală."
+    },
+    "D30": {
+      "label": "Confuzie nouă cu alterarea stării generale",
+      "category": "ATTENTION_FLAG",
+      "differentials": [
+        "delirium posibil",
+        "cauză metabolică acută",
+        "cauză infecțioasă",
+        "cauză neurologică"
+      ],
+      "managementOptions": [
+        "evaluare medicală de urgență",
+        "nu se stabilește cauza ori tratamentul automat"
+      ],
+      "investigations": [
+        "evaluare urgentă și investigații conform protocolului clinic"
+      ],
+      "referral": "serviciu de urgență",
+      "explanation": "O modificare acută a stării de conștiență este un semnal de alarmă în simulare."
+    },
+    "D24": {
+      "label": "Dificultate respiratorie severă raportată",
+      "category": "ATTENTION_FLAG",
+      "differentials": [
+        "insuficiență respiratorie posibilă",
+        "exacerbare obstructivă severă",
+        "alte cauze pulmonare acute"
+      ],
+      "managementOptions": [
+        "evaluare medicală de urgență",
+        "nu se stabilește terapie automat"
+      ],
+      "investigations": [
+        "evaluare urgentă a respirației și oxigenării de echipa medicală"
+      ],
+      "referral": "serviciu de urgență",
+      "explanation": "Datele artificiale includ dificultate respiratorie importantă și oxigenare redusă."
+    },
+    "D28": {
+      "label": "Glicemie foarte scăzută cu simptome",
+      "category": "ATTENTION_FLAG",
+      "differentials": [
+        "hipoglicemie severă posibilă",
+        "alte cauze metabolice",
+        "alte cauze de confuzie acută"
+      ],
+      "managementOptions": [
+        "evaluare medicală de urgență",
+        "aplicația nu stabilește intervenții sau doze"
+      ],
+      "investigations": [
+        "confirmarea urgentă a glicemiei și evaluare conform protocolului clinic"
+      ],
+      "referral": "serviciu de urgență",
+      "explanation": "Valoarea glicemică foarte redusă și afectarea stării mentale sunt semnale de alarmă pentru simulare."
+    },
+    "D13": {
+      "label": "Wheezing / astm posibil necontrolat",
+      "category": "EXTENDED_REVIEW",
+      "differentials": [
+        "astm posibil",
+        "bronșită",
+        "alte cauze de wheezing"
+      ],
+      "managementOptions": [
+        "evaluarea controlului respirator",
+        "revizuirea planului prescris cu medicul",
+        "reevaluare dacă respirația se agravează"
+      ],
+      "investigations": [
+        "examinare clinică",
+        "spirometrie când este potrivit"
+      ],
+      "referral": "evaluare clinică extinsă / pneumologie",
+      "explanation": "Simptome respiratorii recurente, fără insuficiență respiratorie severă în profilul fictiv."
+    },
+    "D04": {
+      "label": "Cefalee de tip tensional posibilă",
+      "category": "GENERAL_REVIEW",
+      "differentials": [
+        "migrenă",
+        "cefalee asociată somnului insuficient"
+      ],
+      "managementOptions": [
+        "evaluarea factorilor de somn și stres",
+        "măsuri generale non-farmacologice",
+        "tratament doar la recomandarea medicului"
+      ],
+      "investigations": [
+        "anamneză și examen clinic orientat"
+      ],
+      "referral": "medic de familie",
+      "explanation": "Caracterul difuz și contextul de stres sunt folosite pentru un exemplu didactic, nu pentru stabilirea diagnosticului."
+    },
+    "D22": {
+      "label": "Sindrom de durere toracică cu semnale de alarmă",
+      "category": "ATTENTION_FLAG",
+      "differentials": [
+        "sindrom coronarian posibil",
+        "alte cauze cardiace",
+        "cauze pulmonare"
+      ],
+      "managementOptions": [
+        "solicitarea evaluării medicale de urgență",
+        "nu se stabilește tratament automat în aplicație"
+      ],
+      "investigations": [
+        "evaluare urgentă de către echipa medicală",
+        "ECG și analize doar conform protocolului clinic"
+      ],
+      "referral": "serviciu de urgență",
+      "explanation": "Tipar artificial care conține semnale de alarmă cardiopulmonară."
+    },
+    "D18": {
+      "label": "Hiperglicemie posibilă fără alterare acută",
+      "category": "EXTENDED_REVIEW",
+      "differentials": [
+        "diabet dezechilibrat",
+        "hiperglicemie de stres",
+        "alte tulburări metabolice"
+      ],
+      "managementOptions": [
+        "evaluare medicală pentru confirmare și plan",
+        "revizuirea schemei deja prescrise cu medicul",
+        "monitorizarea simptomelor"
+      ],
+      "investigations": [
+        "retestarea glicemiei",
+        "HbA1c dacă este indicat"
+      ],
+      "referral": "evaluare clinică extinsă / diabetologie",
+      "explanation": "Valoarea glicemică necesită interpretare în contextul clinic."
+    },
+    "D16": {
+      "label": "Valori tensionale crescute fără semne acute",
+      "category": "EXTENDED_REVIEW",
+      "differentials": [
+        "hipertensiune posibilă",
+        "efect de halat alb",
+        "variabilitate tensională"
+      ],
+      "managementOptions": [
+        "confirmarea prin măsurători adecvate",
+        "revizuirea factorilor de risc și tratamentelor cu medicul"
+      ],
+      "investigations": [
+        "măsurători repetate",
+        "monitorizare ambulatorie dacă medicul indică"
+      ],
+      "referral": "evaluare clinică extinsă / medic de familie",
+      "explanation": "Valori tensionale crescute izolat nu justifică automat o etichetă de urgență."
+    },
+    "D17": {
+      "label": "Infecție cutanată localizată posibilă",
+      "category": "EXTENDED_REVIEW",
+      "differentials": [
+        "celulită infecțioasă posibilă",
+        "dermatită de contact",
+        "reacție locală"
+      ],
+      "managementOptions": [
+        "consult medical pentru evaluarea leziunii",
+        "tratament doar după evaluarea cauzei",
+        "monitorizarea extinderii"
+      ],
+      "investigations": [
+        "examinare locală",
+        "analize dacă sunt indicate"
+      ],
+      "referral": "evaluare clinică extinsă / dermatologie",
+      "explanation": "Inflamația locală poate avea etiologii diferite."
+    },
+    "D10": {
+      "label": "Infecție urinară posibilă",
+      "category": "EXTENDED_REVIEW",
+      "differentials": [
+        "iritație urinară",
+        "litiază urinară",
+        "alte cauze de disurie"
+      ],
+      "managementOptions": [
+        "evaluare medicală înainte de tratament",
+        "hidratare în funcție de toleranță și indicații",
+        "antibiotice numai dacă medicul stabilește indicația"
+      ],
+      "investigations": [
+        "sumar de urină după indicație",
+        "urocultură după indicație"
+      ],
+      "referral": "medic de familie / urologie după evaluare",
+      "explanation": "Simptomele urinare necesită confirmare și diferențiere clinică."
+    },
+    "D29": {
+      "label": "Abdomen acut posibil",
+      "category": "ATTENTION_FLAG",
+      "differentials": [
+        "abdomen acut posibil",
+        "obstrucție posibilă",
+        "alte cauze chirurgicale"
+      ],
+      "managementOptions": [
+        "evaluare medicală de urgență",
+        "nu se propune tratament fără examinare"
+      ],
+      "investigations": [
+        "evaluare urgentă abdominală și investigații conform deciziei clinice"
+      ],
+      "referral": "serviciu de urgență",
+      "explanation": "Severitatea durerii și instalarea bruscă justifică un semnal de alarmă în profilul artificial."
+    },
+    "D25": {
+      "label": "Infecție sistemică severă posibilă",
+      "category": "ATTENTION_FLAG",
+      "differentials": [
+        "sepsis posibil",
+        "infecție sistemică severă",
+        "alte cauze de instabilitate"
+      ],
+      "managementOptions": [
+        "evaluare medicală de urgență",
+        "tratamentul este decis exclusiv de echipa clinică"
+      ],
+      "investigations": [
+        "evaluare clinică urgentă și investigații conform protocolului"
+      ],
+      "referral": "serviciu de urgență",
+      "explanation": "Combinația febrei cu modificări ale stării mentale și semne fiziologice anormale este un semnal de alarmă în scenariul didactic."
+    },
+    "D19": {
+      "label": "Colică renală posibilă",
+      "category": "EXTENDED_REVIEW",
+      "differentials": [
+        "litiază urinară",
+        "infecție urinară",
+        "durere musculoscheletală"
+      ],
+      "managementOptions": [
+        "evaluare medicală pentru clarificarea cauzei",
+        "managementul durerii doar prin clinician",
+        "urmărirea simptomelor de alarmă"
+      ],
+      "investigations": [
+        "sumar de urină",
+        "ecografie sau altă imagistică dacă este indicată"
+      ],
+      "referral": "evaluare clinică extinsă / urologie",
+      "explanation": "Tiparul durerii ridică o suspiciune, dar nu stabilește cauza."
+    },
+    "D08": {
+      "label": "Dermatită ușoară posibilă",
+      "category": "GENERAL_REVIEW",
+      "differentials": [
+        "dermatită de contact",
+        "eczema",
+        "iritație nespecifică"
+      ],
+      "managementOptions": [
+        "evitarea iritanților cunoscuți",
+        "îngrijire cutanată discutată cu medicul",
+        "evaluarea erupției dacă se extinde"
+      ],
+      "investigations": [
+        "examinare cutanată"
+      ],
+      "referral": "medic de familie / dermatologie după evaluare",
+      "explanation": "Erupția locală este un exemplu fictiv fără semne sistemice."
+    },
+    "D26": {
+      "label": "Reacție alergică sistemică severă posibilă",
+      "category": "ATTENTION_FLAG",
+      "differentials": [
+        "anafilaxie posibilă",
+        "alte reacții alergice severe",
+        "alte cauze respiratorii"
+      ],
+      "managementOptions": [
+        "evaluare medicală de urgență",
+        "nu se oferă schemă de tratament automat"
+      ],
+      "investigations": [
+        "evaluare și tratament de urgență conform protocolului clinic"
+      ],
+      "referral": "serviciu de urgență",
+      "explanation": "Simptome multi-sistemice după expunere sunt considerate semnale de alarmă pentru această simulare."
+    },
+    "D02": {
+      "label": "Rinită alergică posibilă",
+      "category": "GENERAL_REVIEW",
+      "differentials": [
+        "rinită virală",
+        "rinită iritativă"
+      ],
+      "managementOptions": [
+        "discuție privind evitarea alergenilor",
+        "evaluarea opțiunilor simptomatice de către medic"
+      ],
+      "investigations": [
+        "examinare clinică",
+        "anamneză privind expunerea"
+      ],
+      "referral": "medic de familie / alergologie după evaluare",
+      "explanation": "Asocierea strănutului și rinoreei cu expunerea sezonieră este sugestivă doar în scenariul fictiv."
+    },
+    "D27": {
+      "label": "Hemoragie digestivă posibilă cu semne de alarmă",
+      "category": "ATTENTION_FLAG",
+      "differentials": [
+        "hemoragie digestivă posibilă",
+        "alte cauze de anemie acută",
+        "alte cauze de hipotensiune"
+      ],
+      "managementOptions": [
+        "evaluare medicală de urgență",
+        "nu se stabilește medicație în aplicație"
+      ],
+      "investigations": [
+        "evaluare urgentă a stabilității și investigații la indicația echipei medicale"
+      ],
+      "referral": "serviciu de urgență",
+      "explanation": "Sângerarea digestivă relatată și simptomele sistemice necesită analiză urgentă în acest scenariu."
+    },
+    "D01": {
+      "label": "Consultație preventivă",
+      "category": "GENERAL_REVIEW",
+      "differentials": [
+        "monitorizare preventivă",
+        "discuție de risc individual"
+      ],
+      "managementOptions": [
+        "educație sanitară individualizată",
+        "revizuirea istoricului medical"
+      ],
+      "investigations": [
+        "investigații preventive numai după indicația medicului"
+      ],
+      "referral": "medic de familie",
+      "explanation": "Contextul descrie un control planificat, fără semnale acute în scenariul sintetic."
+    },
+    "D06": {
+      "label": "Durere musculoscheletală localizată posibilă",
+      "category": "GENERAL_REVIEW",
+      "differentials": [
+        "suprasolicitare musculară",
+        "durere articulară nespecifică"
+      ],
+      "managementOptions": [
+        "adaptarea temporară a activității după recomandare",
+        "evaluare clinică dacă persistă",
+        "educație privind mobilizarea sigură"
+      ],
+      "investigations": [
+        "examen musculoscheletal dacă este indicat"
+      ],
+      "referral": "medic de familie",
+      "explanation": "Simptomatologia mecanică este generată artificial și necesită confirmare medicală."
+    },
+    "D14": {
+      "label": "Migrenă posibilă",
+      "category": "EXTENDED_REVIEW",
+      "differentials": [
+        "cefalee tensională",
+        "cefalee secundară",
+        "alte cauze neurologice"
+      ],
+      "managementOptions": [
+        "evaluarea clinică a cefaleei",
+        "discuție privind controlul simptomelor",
+        "reevaluare imediată dacă apar semne neurologice noi"
+      ],
+      "investigations": [
+        "anamneză neurologică",
+        "examen neurologic dacă este indicat"
+      ],
+      "referral": "evaluare clinică extinsă / neurologie",
+      "explanation": "Caracteristicile episodului sunt sugestive doar pentru o ipoteză diferențială."
+    },
+    "D09": {
+      "label": "Tulburare de somn nespecifică posibilă",
+      "category": "GENERAL_REVIEW",
+      "differentials": [
+        "insomnie tranzitorie",
+        "somn insuficient",
+        "probleme de ritm circadian"
+      ],
+      "managementOptions": [
+        "evaluarea igienei somnului",
+        "revizuirea factorilor favorizanți",
+        "discuție clinică dacă persistă"
+      ],
+      "investigations": [
+        "anamneză privind somnul"
+      ],
+      "referral": "medic de familie",
+      "explanation": "Nu sunt presupuse cauze psihice sau neurologice din aceste date sintetice."
+    },
+    "D03": {
+      "label": "Sindrom respirator viral ușor posibil",
+      "category": "GENERAL_REVIEW",
+      "differentials": [
+        "rinită alergică",
+        "sinuzită",
+        "alte infecții respiratorii"
+      ],
+      "managementOptions": [
+        "hidratare potrivit toleranței",
+        "măsuri generale de confort",
+        "reevaluare dacă apar semne de alarmă"
+      ],
+      "investigations": [
+        "examinare clinică dacă simptomele persistă"
+      ],
+      "referral": "medic de familie",
+      "explanation": "Simptome respiratorii superioare fără elemente acute în modelul artificial."
+    },
+    "D05": {
+      "label": "Reflux gastroesofagian posibil",
+      "category": "GENERAL_REVIEW",
+      "differentials": [
+        "dispepsie funcțională",
+        "gastrită posibilă"
+      ],
+      "managementOptions": [
+        "discuție despre obiceiurile alimentare",
+        "evaluarea tratamentului de către medic",
+        "monitorizarea simptomelor"
+      ],
+      "investigations": [
+        "anamneză; explorări numai dacă sunt indicate"
+      ],
+      "referral": "medic de familie / gastroenterologie după evaluare",
+      "explanation": "Exemplul descrie simptomatologie legată de mese, fără semne de alarmă declarate."
+    },
+    "D07": {
+      "label": "Constipație necomplicată posibilă",
+      "category": "GENERAL_REVIEW",
+      "differentials": [
+        "constipație funcțională",
+        "efecte medicamentoase"
+      ],
+      "managementOptions": [
+        "revizuirea dietei și hidratării cu medicul",
+        "verificarea tratamentelor curente",
+        "reevaluare la semne noi"
+      ],
+      "investigations": [
+        "anamneză digestivă"
+      ],
+      "referral": "medic de familie",
+      "explanation": "Scenariul nu include semne acute de obstrucție; eticheta este didactică."
+    },
+    "D23": {
+      "label": "Deficit neurologic acut raportat",
+      "category": "ATTENTION_FLAG",
+      "differentials": [
+        "accident vascular cerebral posibil",
+        "alte cauze neurologice acute",
+        "mimici de AVC"
+      ],
+      "managementOptions": [
+        "evaluare medicală de urgență fără întârziere",
+        "nu se propune intervenție automată"
+      ],
+      "investigations": [
+        "evaluare urgentă neurologică și investigații conform protocolului"
+      ],
+      "referral": "serviciu de urgență",
+      "explanation": "Apariția bruscă a unui deficit neurologic este tratată drept semnal de alarmă în scenariu."
+    },
+    "D11": {
+      "label": "Pneumonie posibilă",
+      "category": "EXTENDED_REVIEW",
+      "differentials": [
+        "infecție respiratorie virală",
+        "bronșită",
+        "alte cauze de febră"
+      ],
+      "managementOptions": [
+        "consult medical prompt",
+        "management stabilit numai după evaluare",
+        "urmărirea semnelor de deteriorare"
+      ],
+      "investigations": [
+        "auscultație pulmonară",
+        "investigații imagistice dacă medicul consideră",
+        "analize după indicație"
+      ],
+      "referral": "evaluare clinică extinsă / pneumologie după caz",
+      "explanation": "Simptomele febrile respiratorii sunt insuficiente pentru diagnostic cert."
+    },
+    "D21": {
+      "label": "Febră persistentă cu sursă neclară",
+      "category": "EXTENDED_REVIEW",
+      "differentials": [
+        "infecție respiratorie",
+        "infecție urinară",
+        "alte cauze inflamatorii"
+      ],
+      "managementOptions": [
+        "consult medical pentru identificarea sursei",
+        "hidratare conform toleranței",
+        "monitorizarea deteriorării stării generale"
+      ],
+      "investigations": [
+        "examinare clinică",
+        "hemoleucogramă dacă este indicată",
+        "teste etiologice după evaluare"
+      ],
+      "referral": "evaluare clinică extinsă",
+      "explanation": "Febra persistentă reprezintă un simptom nespecific ce necesită evaluare."
+    },
+    "D15": {
+      "label": "Anemie posibilă",
+      "category": "EXTENDED_REVIEW",
+      "differentials": [
+        "deficit de fier",
+        "alte tipuri de anemie",
+        "alte cauze de oboseală"
+      ],
+      "managementOptions": [
+        "evaluare medicală a cauzei",
+        "tratament specific numai după confirmare",
+        "evaluarea factorilor de risc"
+      ],
+      "investigations": [
+        "hemoleucogramă",
+        "feritină la indicația medicului"
+      ],
+      "referral": "evaluare clinică extinsă",
+      "explanation": "Datele pot fi compatibile cu anemie, dar cauza necesită evaluare."
+    },
+    "D12": {
+      "label": "Gastroenterită cu deshidratare posibilă",
+      "category": "EXTENDED_REVIEW",
+      "differentials": [
+        "intoleranță alimentară",
+        "infecție digestivă",
+        "alte cauze de vărsături"
+      ],
+      "managementOptions": [
+        "evaluarea stării de hidratare",
+        "rehidratare orală doar dacă este tolerată și indicată",
+        "consult medical pentru simptome persistente"
+      ],
+      "investigations": [
+        "evaluarea clinică a hidratării",
+        "electroliți dacă sunt indicați"
+      ],
+      "referral": "evaluare clinică extinsă",
+      "explanation": "Pierderea de lichide justifică reevaluarea gravității în acest exemplu artificial."
+    }
+  }
+}

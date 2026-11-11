@@ -1,0 +1,48 @@
+{
+  "project": "MedFlow",
+  "data_type": "synthetic_demo_only",
+  "database_schema": "V1__initial_schema.sql",
+  "tables_added": {
+    "hospitals": 100,
+    "doctors": 400,
+    "patients": 1450,
+    "app_users": 420,
+    "appointments": 2400,
+    "encounters": 1080,
+    "ai_analyses": 720,
+    "audit_events": 1040
+  },
+  "visible_additions_in_existing_demo_hospital": {
+    "doctors": 100,
+    "patients": 250,
+    "app_users": 120,
+    "appointments": 400,
+    "encounters": 180,
+    "ai_analyses": 120,
+    "audit_events": 240
+  },
+  "cases_from": "MedFlow AI 3000 dataset train split, unique 1080, labels not predicted",
+  "clinical_case_triage_distribution": {
+    "GENERAL_REVIEW": 360,
+    "EXTENDED_REVIEW": 360,
+    "ATTENTION_FLAG": 360
+  },
+  "records_idempotent": true,
+  "password_example": "Demo1234! (DEV ONLY)",
+  "source_sha256": "d493ccdaeb150769f42d3d486a781db6695588998511c3ea271bb377adc07aa2",
+  "adapted_for_schema": "V9",
+  "additional_supporting_records": "Working periods for new scheduled appointments, without modifying existing periods",
+  "refinements": {
+    "distinct_demo_doctor_names": 100,
+    "distinct_demo_patient_names": 250,
+    "distinct_clinical_contexts": 1080,
+    "source": "TRAIN fields: symptom duration, reported severity, glucose, hemoglobin, WBC, CRP"
+  },
+  "longitudinal": {
+    "visitsPerSyntheticPatient": "2–4",
+    "outpatientTrainSources": 1500,
+    "includesOriginalDemoPatients": 5,
+    "marker": "MFHIST-v1",
+    "noExistingClinicalRecordsOverwritten": true
+  }
+}

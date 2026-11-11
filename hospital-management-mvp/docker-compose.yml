@@ -1,0 +1,123 @@
+services:
+  db:
+    image: postgres:16-alpine
+    command: ["postgres", "-c", "timezone=${HOSPITAL_TIMEZONE:-Europe/Bucharest}"]
+    environment:
+      POSTGRES_DB: hospital
+      POSTGRES_USER: hospital
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-hospital_dev_password}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U hospital -d hospital"]
+      interval: 5s
+      timeout: 5s
+      retries: 15
+  db-setup:
+    image: postgres:16-alpine
+    environment:
+      PGHOST: db
+      PGDATABASE: hospital
+      PGUSER: hospital
+      PGPASSWORD: ${POSTGRES_PASSWORD:-hospital_dev_password}
+      APP_DATABASE_PASSWORD: ${APP_DATABASE_PASSWORD:-hospital_app_dev_password}
+    volumes:
+      - ./db/provision-app-role.sh:/scripts/provision-app-role.sh:ro
+    entrypoint: ["/bin/sh", "/scripts/provision-app-role.sh"]
+    depends_on:
+      db:
+        condition: service_healthy
+  ai:
+    build: ./ai-service
+    restart: unless-stopped
+  backend:
+    build: ./backend
+    ports:
+      - "127.0.0.1:8080:8080"
+    environment:
+      TZ: ${HOSPITAL_TIMEZONE:-Europe/Bucharest}
+      DATABASE_URL: jdbc:postgresql://db:5432/hospital
+      DATABASE_USER: hospital_app
+      DATABASE_PASSWORD: ${APP_DATABASE_PASSWORD:-hospital_app_dev_password}
+      FLYWAY_USER: hospital
+      FLYWAY_PASSWORD: ${POSTGRES_PASSWORD:-hospital_dev_password}
+      JWT_SECRET: ${JWT_SECRET:-dev_only_change_me_please_12345678901234567890}
+      AI_URL: http://ai:8000
+      CORS_ORIGIN: http://localhost:3000
+      DEMO_SEED: "true"
+      DOCUMENT_STORAGE: /app/data/documents
+    volumes:
+      - medical_documents:/app/data/documents
+    depends_on:
+      db:
+        condition: service_healthy
+      db-setup:
+        condition: service_completed_successfully
+    restart: unless-stopped
+  populate:
+    image: postgres:16-alpine
+    profiles: ["seed"]
+    environment:
+      PGHOST: db
+      PGDATABASE: hospital
+      PGUSER: hospital
+      PGPASSWORD: ${POSTGRES_PASSWORD:-hospital_dev_password}
+    volumes:
+      - ./db/seed/medflow_100plus:/seed:ro
+    entrypoint: ["/bin/sh", "/seed/import.sh"]
+    depends_on:
+      db:
+        condition: service_healthy
+      backend:
+        condition: service_healthy
+    restart: "no"
+  backup:
+    build:
+      context: .
+      dockerfile: ops/backup.Dockerfile
+    environment:
+      PGHOST: db
+      PGDATABASE: hospital
+      PGUSER: hospital
+      PGPASSWORD: ${POSTGRES_PASSWORD:-hospital_dev_password}
+    volumes:
+      - medical_documents:/documents:ro
+      - backup_archives:/backups
+      - backup_keys:/keys
+    depends_on:
+      db:
+        condition: service_healthy
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "test -f /backups/last-success && test $$(( $$(date +%s) - $$(cat /backups/last-success) )) -lt 90000"]
+      interval: 60s
+      timeout: 5s
+      retries: 3
+      start_period: 60s
+  restore:
+    extends:
+      service: backup
+    profiles: ["maintenance"]
+    entrypoint: ["/scripts/restore.sh"]
+    restart: "no"
+    volumes:
+      - medical_documents:/documents
+      - backup_archives:/backups:ro
+      - backup_keys:/keys:ro
+    healthcheck:
+      disable: true
+  frontend:
+    build: ./frontend
+    ports:
+      - "127.0.0.1:3000:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+volumes:
+  postgres_data:
+  medical_documents:
+  backup_archives:
+  backup_keys:

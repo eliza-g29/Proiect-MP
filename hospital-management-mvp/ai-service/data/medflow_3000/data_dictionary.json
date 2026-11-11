@@ -1,0 +1,197 @@
+{
+  "overview": "Structured, exclusively synthetic case-level examples for demonstrative clinical decision support.",
+  "input_columns": [
+    {
+      "name": "case_id",
+      "role": "identifier_or_split",
+      "description": "Synthetic patient/encounter feature or context."
+    },
+    {
+      "name": "split",
+      "role": "identifier_or_split",
+      "description": "Synthetic patient/encounter feature or context."
+    },
+    {
+      "name": "synthetic_patient_id",
+      "role": "identifier_or_split",
+      "description": "Synthetic patient/encounter feature or context."
+    },
+    {
+      "name": "synthetic_encounter_id",
+      "role": "identifier_or_split",
+      "description": "Synthetic patient/encounter feature or context."
+    },
+    {
+      "name": "synthetic_hospital_id",
+      "role": "identifier_or_split",
+      "description": "Synthetic patient/encounter feature or context."
+    },
+    {
+      "name": "age_years",
+      "role": "feature",
+      "description": "Synthetic age in years"
+    },
+    {
+      "name": "sex_at_birth",
+      "role": "feature",
+      "description": "Simulated biological sex field F/M, not gender identity"
+    },
+    {
+      "name": "visit_setting",
+      "role": "feature",
+      "description": "Synthetic patient/encounter feature or context."
+    },
+    {
+      "name": "chief_complaint",
+      "role": "feature",
+      "description": "Synthetic patient/encounter feature or context."
+    },
+    {
+      "name": "symptoms_text",
+      "role": "feature",
+      "description": "Patient-reported signs and symptoms; semicolon delimited"
+    },
+    {
+      "name": "symptom_duration_days",
+      "role": "feature",
+      "description": "Synthetic patient/encounter feature or context."
+    },
+    {
+      "name": "reported_severity_0_10",
+      "role": "feature",
+      "description": "Synthetic patient/encounter feature or context."
+    },
+    {
+      "name": "chronic_conditions",
+      "role": "feature",
+      "description": "Synthetic history; semicolon delimited"
+    },
+    {
+      "name": "current_medications",
+      "role": "feature",
+      "description": "Synthetic patient/encounter feature or context."
+    },
+    {
+      "name": "known_allergies",
+      "role": "feature",
+      "description": "Synthetic patient/encounter feature or context."
+    },
+    {
+      "name": "family_history",
+      "role": "feature",
+      "description": "Synthetic patient/encounter feature or context."
+    },
+    {
+      "name": "temperature_c",
+      "role": "feature",
+      "description": "Synthetic patient/encounter feature or context."
+    },
+    {
+      "name": "heart_rate_bpm",
+      "role": "feature",
+      "description": "Synthetic patient/encounter feature or context."
+    },
+    {
+      "name": "respiratory_rate_per_min",
+      "role": "feature",
+      "description": "Synthetic patient/encounter feature or context."
+    },
+    {
+      "name": "systolic_bp_mmhg",
+      "role": "feature",
+      "description": "Synthetic patient/encounter feature or context."
+    },
+    {
+      "name": "diastolic_bp_mmhg",
+      "role": "feature",
+      "description": "Synthetic patient/encounter feature or context."
+    },
+    {
+      "name": "spo2_percent",
+      "role": "feature",
+      "description": "Synthetic patient/encounter feature or context."
+    },
+    {
+      "name": "glucose_mg_dl",
+      "role": "feature",
+      "description": "Optional, blank if not available at intake"
+    },
+    {
+      "name": "hemoglobin_g_dl",
+      "role": "feature",
+      "description": "Optional, blank if not available"
+    },
+    {
+      "name": "wbc_10e9_l",
+      "role": "feature",
+      "description": "Optional, blank if not available"
+    },
+    {
+      "name": "crp_mg_l",
+      "role": "feature",
+      "description": "Optional, blank if not available"
+    },
+    {
+      "name": "clinical_observations",
+      "role": "feature",
+      "description": "Synthetic patient/encounter feature or context."
+    },
+    {
+      "name": "clinical_input_text",
+      "role": "feature",
+      "description": "Aggregate text feature for baseline NLP models; contains no labels."
+    }
+  ],
+  "target_columns": [
+    {
+      "name": "target_triage_category",
+      "description": "One of GENERAL_REVIEW / EXTENDED_REVIEW / ATTENTION_FLAG; DIDACTIC, NOT actual medical urgency level"
+    },
+    {
+      "name": "target_syndrome_code",
+      "description": "Didactic category D01..D30 (not ICD/SNOMED)"
+    },
+    {
+      "name": "target_syndrome_label",
+      "description": "Illustrative potential syndrome label, NOT confirmed diagnosis"
+    },
+    {
+      "name": "target_differential_labels",
+      "description": "Pipe-delimited possible alternatives, NOT validated clinical ground truth"
+    },
+    {
+      "name": "target_management_options",
+      "description": "Pipe-delimited conservative options for human review, no drug dosage"
+    },
+    {
+      "name": "target_suggested_investigations",
+      "description": "Pipe-delimited ideas for clinician review, not orders"
+    },
+    {
+      "name": "target_referral",
+      "description": "Demonstrative route suggestion, NOT healthcare triage"
+    },
+    {
+      "name": "target_alert_reason",
+      "description": "Synthetic pattern alert reason, not a clinical rule"
+    },
+    {
+      "name": "target_explanation",
+      "description": "Scenario-generated explanation; not factual clinical evidence"
+    },
+    {
+      "name": "target_clinician_review_required",
+      "description": "Always true (human makes the decision)"
+    }
+  ],
+  "excluded_from_training": [
+    "case_id",
+    "split",
+    "synthetic_patient_id",
+    "synthetic_encounter_id",
+    "synthetic_hospital_id",
+    "label_source",
+    "all target_* fields"
+  ],
+  "warning": "Do not use synthetic-only data to deploy a system for real-world diagnosis, treatment or urgency decisions. Human expert review + real representative data + external validation are mandatory."
+}

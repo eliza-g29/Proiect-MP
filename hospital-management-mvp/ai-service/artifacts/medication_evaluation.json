@@ -1,0 +1,82 @@
+{
+  "version": "synthetic-medication-routing-v1",
+  "clinicalValidation": false,
+  "scope": "Routing/exclusion rule imitation only; no clinical treatment effectiveness or dosing evaluation",
+  "splitUnit": "scenarioGroup (complete risk context)",
+  "counts": {
+    "train": 14700,
+    "validation": 3150,
+    "test": 3150
+  },
+  "catalogSha256": "2c759fab9ee14686c72837306887eafec86277d30e5188d329a0acf5fb963ad5",
+  "modelSha256": "472b0c59fd8373516278fbdebb9d03da63953363796872f9d52d3c3eae91f582",
+  "dataSha256": {
+    "train": "58c525be0c118f3ec9a27d81a33249e52bc0f15ca5213106191ca56f236154a0",
+    "validation": "fffabad94641378045d5e64f1d4412aa1bc7f28af4e8d32e82879c2e8be35e90",
+    "test": "9e87968b82964bc500e3ad4fbbd18c3cff3aa37b560dd0b8876e4c0509189658"
+  },
+  "test": {
+    "examples": 3150,
+    "accuracy": 1.0,
+    "macro_f1": 1.0,
+    "weighted_f1": 1.0,
+    "classes": [
+      "blocked",
+      "consider",
+      "irrelevant",
+      "review"
+    ],
+    "per_class": {
+      "blocked": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 94
+      },
+      "consider": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 33
+      },
+      "irrelevant": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 3000
+      },
+      "review": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 23
+      }
+    },
+    "confusion_matrix": [
+      [
+        94,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        33,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        3000,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        23
+      ]
+    ]
+  }
+}

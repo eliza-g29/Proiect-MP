@@ -1,0 +1,213 @@
+{
+  "version": "academic-formulary-v1",
+  "reviewedOn": "2026-11-12",
+  "clinicalValidation": false,
+  "sources": {
+    "paracetamol": {
+      "title": "NHS — Paracetamol for adults",
+      "url": "https://www.nhs.uk/medicines/paracetamol-for-adults/"
+    },
+    "allergy": {
+      "title": "NHS — Cetirizine",
+      "url": "https://www.nhs.uk/medicines/cetirizine/"
+    },
+    "reflux": {
+      "title": "NHS — Heartburn and acid reflux",
+      "url": "https://www.nhs.uk/conditions/heartburn-and-acid-reflux/"
+    },
+    "interaction": {
+      "title": "NHS SPS — Clopidogrel and PPIs",
+      "url": "https://www.sps.nhs.uk/articles/using-clopidogrel-with-proton-pump-inhibitors-ppis/"
+    },
+    "constipation": {
+      "title": "NHS — Macrogol",
+      "url": "https://www.nhs.uk/medicines/macrogol/"
+    },
+    "skin": {
+      "title": "Hydrocortisone 1% — SmPC",
+      "url": "https://www.medicines.org.uk/emc/product/13104/smpc"
+    },
+    "uti": {
+      "title": "NICE NG109 — Lower UTI antimicrobial prescribing",
+      "url": "https://www.nice.org.uk/guidance/ng109/chapter/Recommendations"
+    }
+  },
+  "medications": [
+    {
+      "id": "paracetamol",
+      "name": "Paracetamol",
+      "profiles": [
+        "D03",
+        "D04",
+        "D06",
+        "D14"
+      ],
+      "indication": "Opțiune simptomatică pentru durere sau febră; nu tratează cauza.",
+      "allergyTerms": [
+        "paracetamol"
+      ],
+      "risks": [
+        "hepatic",
+        "duplicate"
+      ],
+      "sourceIds": [
+        "paracetamol"
+      ],
+      "checks": [
+        "Vârstă și sarcină/alăptare",
+        "Alergii și tratamente concomitente",
+        "Indicație, contraindicații și doză din prospectul produsului disponibil local"
+      ]
+    },
+    {
+      "id": "cetirizine",
+      "name": "Cetirizină",
+      "profiles": [
+        "D02"
+      ],
+      "indication": "Antihistaminic pentru manifestări de rinită alergică.",
+      "allergyTerms": [
+        "cetirizin",
+        "cetirizine",
+        "hidroxizin",
+        "hydroxyzine"
+      ],
+      "risks": [
+        "renal",
+        "duplicate"
+      ],
+      "sourceIds": [
+        "allergy"
+      ],
+      "checks": [
+        "Vârstă și sarcină/alăptare",
+        "Alergii și tratamente concomitente",
+        "Indicație, contraindicații și doză din prospectul produsului disponibil local"
+      ]
+    },
+    {
+      "id": "alginate",
+      "name": "Alginat de sodiu",
+      "profiles": [
+        "D05"
+      ],
+      "indication": "Opțiune pentru ameliorarea arsurilor și refluxului.",
+      "allergyTerms": [
+        "alginat",
+        "alginate"
+      ],
+      "risks": [
+        "renal",
+        "duplicate"
+      ],
+      "sourceIds": [
+        "reflux"
+      ],
+      "checks": [
+        "Vârstă și sarcină/alăptare",
+        "Alergii și tratamente concomitente",
+        "Indicație, contraindicații și doză din prospectul produsului disponibil local"
+      ]
+    },
+    {
+      "id": "omeprazole",
+      "name": "Omeprazol",
+      "profiles": [
+        "D05"
+      ],
+      "indication": "Inhibitor de pompă de protoni, de discutat dacă simptomatologia de reflux justifică tratament.",
+      "allergyTerms": [
+        "omeprazol",
+        "omeprazole"
+      ],
+      "risks": [
+        "interaction",
+        "duplicate"
+      ],
+      "sourceIds": [
+        "reflux",
+        "interaction"
+      ],
+      "checks": [
+        "Vârstă și sarcină/alăptare",
+        "Alergii și tratamente concomitente",
+        "Indicație, contraindicații și doză din prospectul produsului disponibil local"
+      ]
+    },
+    {
+      "id": "macrogol",
+      "name": "Macrogol",
+      "profiles": [
+        "D07"
+      ],
+      "indication": "Laxativ osmotic pentru constipație după excluderea semnelor de obstrucție.",
+      "allergyTerms": [
+        "macrogol",
+        "polietilenglicol",
+        "polyethylene"
+      ],
+      "risks": [
+        "obstruction",
+        "renal",
+        "duplicate"
+      ],
+      "sourceIds": [
+        "constipation"
+      ],
+      "checks": [
+        "Vârstă și sarcină/alăptare",
+        "Alergii și tratamente concomitente",
+        "Indicație, contraindicații și doză din prospectul produsului disponibil local"
+      ]
+    },
+    {
+      "id": "hydrocortisone",
+      "name": "Hidrocortizon topic 1%",
+      "profiles": [
+        "D08"
+      ],
+      "indication": "Opțiune locală pentru dermatită inflamatorie; se exclude o infecție cutanată și se verifică zona de aplicare.",
+      "allergyTerms": [
+        "hidrocortizon",
+        "hydrocortisone"
+      ],
+      "risks": [
+        "skin_infection",
+        "duplicate"
+      ],
+      "sourceIds": [
+        "skin"
+      ],
+      "checks": [
+        "Vârstă și sarcină/alăptare",
+        "Alergii și tratamente concomitente",
+        "Indicație, contraindicații și doză din prospectul produsului disponibil local"
+      ]
+    },
+    {
+      "id": "nitrofurantoin",
+      "name": "Nitrofurantoină",
+      "profiles": [
+        "D10"
+      ],
+      "indication": "De evaluat exclusiv pentru infecție urinară joasă necomplicată, după verificarea funcției renale, culturii și contextului clinic.",
+      "allergyTerms": [
+        "nitrofurantoin"
+      ],
+      "risks": [
+        "renal",
+        "fever",
+        "duplicate"
+      ],
+      "sourceIds": [
+        "uti"
+      ],
+      "checks": [
+        "Vârstă și sarcină/alăptare",
+        "Alergii și tratamente concomitente",
+        "Indicație, contraindicații și doză din prospectul produsului disponibil local",
+        "eGFR, urocultură, absența febrei/durerii de flanc; nu pentru pielonefrită"
+      ]
+    }
+  ]
+}

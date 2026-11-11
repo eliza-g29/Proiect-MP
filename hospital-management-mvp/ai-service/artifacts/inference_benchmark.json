@@ -1,0 +1,12 @@
+{
+  "model": "synthetic-medflow-3000-v1",
+  "examples": 375,
+  "unit": "milliseconds",
+  "median": 0.13816694263368845,
+  "p95": 0.17125008162111044,
+  "maximum": 0.7718330016359687,
+  "includes_http": false,
+  "includes_database": false,
+  "clinical_validation": false,
+  "environment": "Current execution session; CPU inference"
+}

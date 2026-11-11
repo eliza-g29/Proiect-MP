@@ -1,0 +1,27 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: hospital-api
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/hospital}
+    username: ${DATABASE_USER:hospital}
+    password: ${DATABASE_PASSWORD:hospital_dev_password}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 11MB
+  flyway:
+    enabled: true
+    user: ${FLYWAY_USER:${DATABASE_USER:hospital}}
+    password: ${FLYWAY_PASSWORD:${DATABASE_PASSWORD:hospital_dev_password}}
+app:
+  jwt-secret: ${JWT_SECRET:dev_only_change_me_please_12345678901234567890}
+  ai-url: ${AI_URL:http://localhost:8000}
+  cors-origin: ${CORS_ORIGIN:http://localhost:5173}
+  demo-seed: ${DEMO_SEED:true}
+  document-storage: ${DOCUMENT_STORAGE:./data/documents}
